@@ -19,10 +19,4 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.post('/', function (req, res, next) {
-    console.log(req.body);
-    var result = {hello: "hello Back"};
-    res.send(JSON.stringify(result));
-});
-
 module.exports = router;

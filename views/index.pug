@@ -15,18 +15,18 @@ block header
             .navbar-collapse.collapse#myNavbar
                 ul.nav.navbar-nav.navbar-right
                     li.active
-                        a(href='#section1') Enterprise
+                        a(href='#section1') 企业
                     li
-                        a(href='#section2') Engineer
+                        a(href='#section2') 求职者
 
 block content
     #section1.container
         .page-header
-            h2.text-center Enterprise
-                a(href='/enterprise/add').link --Add New
+            h2.text-center 企业
+                a(href='/enterprise/add').link --新增
         include enterprise
     #section2.container
         .page-header
-            h2.text-center Engineer
-                a(href='/engineer/add').link --Add New
+            h2.text-center 求职者
+                a(href='/engineer/add').link --新增
         include engineer

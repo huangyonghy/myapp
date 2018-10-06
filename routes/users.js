@@ -11,7 +11,7 @@ router.get('/', require('connect-ensure-login').ensureLoggedIn(), function(req, 
             res.redirect('/');
         }
         else {
-            res.render('userList', {users: users});
+            res.render('userList', {user: req.user, users: users});
         }
     });
 });

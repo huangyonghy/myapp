@@ -2,22 +2,22 @@ extends basic
 
 block content
     #main_body.text-center
-        h2 Add article by #{username}
+        h2 新增企业信息
         form(action='/enterprise/add' method='post')
             input(type="text" name="username", value=username, style='display: none')
-            p.text-left Name:
+            p.text-left 名字:
                 input(type="text", name="name")
             br
-            p.text-left Contact Name:
+            p.text-left 联系人:
                 input(type="text", name="contact_name")
             br
-            p.text-left Contact Telephone:
+            p.text-left 联系电话:
                 input(type="text", name="contact_telephone")
             br
-            p.text-left Follow State:
+            p.text-left 跟踪状态:
                 input(type="text", name="follow_state")
             br
-            p.text-left Postscript:
+            p.text-left 备注:
                 input(name="postscript")
             br
             button(type='submit') Submit

@@ -2,7 +2,7 @@ extends basic
 
 block content
     #login_body.container.text-center
-        p All user infomation
+        p 用户列表(用户名 ： 联系电话)
         ol
             each user in users
                 li.text-left #{user.username} : #{user.telephone}

@@ -22,12 +22,17 @@ body {
     padding-top: 2em;
 }
 
-#section3 .link {
+#section1 .link {
     font-style: italic;
     font-size: smaller;
     color: #a94442;
 }
 
+#section2 .link {
+    font-style: italic;
+    font-size: smaller;
+    color: #a94442;
+}
 
 /* music */
 .music {

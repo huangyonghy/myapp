@@ -17,12 +17,12 @@ html(lang=en)
             footer
                 p.
                    &copy; 2018. All Rights Reversed
-                a(href='/users' style='color: red') User List : 
-                a(href='/register' style='color: blue') Register : 
+                a(href='/users' style='color: red') 用户列表 : 
+                a(href='/register' style='color: blue') 用户注册 : 
                 if (!user)
-                    a(href='/login' style='color: green') Log In
+                    a(href='/login' style='color: green') 登录
                 else
-                    a(href='/logout' style='color: green') Log Out
+                    a(href='/logout' style='color: green') 退出
         script(type='text/javascript', src='/javascripts/jquery-3.1.1.min.js')
         script(type='text/javascript', src='/javascripts/bootstrap.js')
         script(type="text/javascript", src="/javascripts/pagination.js")
