@@ -1,0 +1,26 @@
+{
+enterprise_info:
+{
+name:  //string
+lianxiren_telephone:  //string
+lianxiren_title:
+follow_state: //set{"yixiang", "daigaigenjin", "qianyue"}
+ps:  //string
+}
+
+enginner_infos
+{
+name:
+phone:
+title_info: //string("jianzhu", "kuaijishi")
+title_state: //set{"chushi", "biangeng"}
+on_work  //true/false
+follow_state: //set{"yixiang", "daigaigenjin", "qianyue"}
+ps:
+}
+
+admin_users
+{
+name: String
+telephone: String
+}

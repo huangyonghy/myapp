@@ -1,0 +1,18 @@
+input(type="hidden" id="showPerPage" value="0")
+input(type="hidden" id="currentPage" value="0")
+
+.article
+    table.table
+      tr
+        th Name
+        th Contact_Name
+        th Contact_telephone
+        th Follow_State
+        th PS
+      each info in enterprise_info
+        tr
+          td #{info.name}
+          td #{info.contact_name}
+          td #{info.contact_telephone}
+          td #{info.follow_state}
+          td #{info.postscript}
