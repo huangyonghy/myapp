@@ -1,0 +1,26 @@
+extends basic
+
+block content
+    #main_body.text-center
+        h2 Add engineer by #{username}
+        form(action='/engineer/add' method='post')
+            input(type="text" name="username", value=username, style='display: none')
+            p.text-left Name:
+                input(type="text", name="name")
+            br
+            p.text-left Telephone:
+                input(type="text", name="telephone")
+            br
+            p.text-left Title Info:
+                input(type="text", name="title_info")
+            br
+            p.text-left Title State:
+                input(type="text", name="title_state")
+            br
+            p.text-left Work State:
+                input(type="text", name="work_state")
+            br
+            p.text-left Postscript:
+                input(name="postscript")
+            br
+            button(type='submit') Submit

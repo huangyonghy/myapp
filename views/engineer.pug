@@ -1,0 +1,20 @@
+input(type="hidden" id="showPerPage" value="0")
+input(type="hidden" id="currentPage" value="0")
+
+.article
+    table.table
+      tr
+        th Name
+        th Tlephone
+        th Title Info
+        th Title State
+        th Work State
+        th PS
+      each info in engineer_info
+        tr
+          td #{info.name}
+          td #{info.telephone}
+          td #{info.title_info}
+          td #{info.title_state}
+          td #{info.work_state}
+          td #{info.postscript}

@@ -12,9 +12,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var register = require('./routes/register');
-var media = require('./routes/media');
-var diary = require('./routes/diary');
 var enterprise = require('./routes/enterprise');
+var engineer = require('./routes/engineer');
 
 var app = express();
 
@@ -40,6 +39,7 @@ app.use('/', login);
 app.use('/login', login);
 app.use('/information', index);
 app.use('/enterprise', enterprise);
+app.use('/engineer', engineer);
 app.get('/logout',
     function(req, res){
         req.logout();
@@ -47,8 +47,6 @@ app.get('/logout',
     });
 app.use('/register', register);
 app.use('/users', users);
-app.use('/media', media);
-app.use('/diary', diary);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
