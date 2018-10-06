@@ -23,5 +23,13 @@ router.post('/add', function(req, res, next) {
     });
 });
 
+router.get('/delete', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
+    console.log(req.user);
+    var arg = url.parse(req.url).query;
+    var params = querystring.parse(arg);
+    console.log("param - " + params);
+    res.redirect('/information');
+});
+
 
 module.exports = router;

@@ -9,6 +9,7 @@ input(type="hidden" id="currentPage" value="0")
         th 联系电话
         th 跟踪状态
         th 备注
+        th 操作
       each info in enterprise_info
         tr
           td #{info.name}
@@ -16,3 +17,9 @@ input(type="hidden" id="currentPage" value="0")
           td #{info.contact_telephone}
           td #{info.follow_state}
           td #{info.postscript}
+          td 
+            - var item1 = '#{info.name}';
+            a(href='/enterprise/delete?name='+$item1).link 删除
+            br
+            a(href='/enterprise/modify?name=#{info.name}').link 编辑
+            

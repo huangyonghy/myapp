@@ -5,22 +5,22 @@ block content
         h2 新增求职者信息
         form(action='/engineer/add' method='post')
             input(type="text" name="username", value=username, style='display: none')
-            p.text-left Name:
+            p.text-left 名字:
                 input(type="text", name="name")
             br
-            p.text-left Telephone:
+            p.text-left 联系电话:
                 input(type="text", name="telephone")
             br
-            p.text-left Title Info:
+            p.text-left 职称:
                 input(type="text", name="title_info")
             br
-            p.text-left Title State:
+            p.text-left 职称状态:
                 input(type="text", name="title_state")
             br
-            p.text-left Work State:
+            p.text-left 工作状态:
                 input(type="text", name="work_state")
             br
-            p.text-left Postscript:
+            p.text-left 备注:
                 input(name="postscript")
             br
-            button(type='submit') Submit
+            button(type='submit') 提交
