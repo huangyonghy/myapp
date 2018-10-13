@@ -17,4 +17,10 @@ router.get('/', require('connect-ensure-login').ensureLoggedIn(), function(req, 
 });
 
 
+router.get('/delete', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
+    db_api.delete_user(req.query, function(err) {
+        res.redirect('/users');
+    });
+});
+
 module.exports = router;

@@ -6,17 +6,27 @@ var db_api = require("../lib/db_api");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    db_api.get_enterprise_info_by_user(req.user, function(err, enterprise_info) {
-        if (err || !enterprise_info){
-             enterprise_info = []
-        }
-        db_api.get_engineer_info_by_user(req.user, function(err, engineer_info) {
-            if (err || !engineer_info){
-                 engineer_info = []
+    if (req.user) {
+        db_api.get_enterprise_info_by_user(req.user, function(err, enterprise_info) {
+            if (err || !enterprise_info){
+                enterprise_info = []
             }
-            res.render('index', {title: "Demo Website", user: req.user, enterprise_info: enterprise_info, engineer_info: engineer_info});
-        });
-    });
+            db_api.get_engineer_info_by_user(req.user, function(err, engineer_info) {
+                if (err || !engineer_info){
+                    engineer_info = []
+                }
+                if (req.user) {
+                    res.render('index', {title: "Demo Website", user: req.user, enterprise_info: enterprise_info, engineer_info: engineer_info});
+                }
+                else {
+                    res.redirect("/login");
+                }
+            });
+       });
+   }
+   else {
+       res.redirect("/login");
+   }
 });
 
 module.exports = router;

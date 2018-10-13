@@ -1,0 +1,26 @@
+extends basic
+
+block content
+    #main_body.text-center
+        h2 新增求职者信息
+        form(action='/engineer/modify' method='post')
+            input(type="text" name="username", value=engineer_info.username, style='display: none')
+            p.text-left 名字:
+                input(type="text", name="name", readonly='readonly', value=engineer_info.name)
+            br
+            p.text-left 联系电话:
+                input(type="text", name="telephone", value=engineer_info.telephone)
+            br
+            p.text-left 职称:
+                input(type="text", name="title_info", value=engineer_info.title_info)
+            br
+            p.text-left 职称状态:
+                input(type="text", name="title_state", value=engineer_info.title_state)
+            br
+            p.text-left 工作状态:
+                input(type="text", name="work_state", value=engineer_info.work_state)
+            br
+            p.text-left 备注:
+                input(name="postscript", value=engineer_info.postscript)
+            br
+            button(type='submit') 提交

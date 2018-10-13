@@ -88,3 +88,25 @@ port： 8080
 [0mGET / [0m- [0m- ms - -[0m
 [0mGET / [0m- [0m- ms - -[0m
 [0mGET / [0m- [0m- ms - -[0m
+port： 8080
+Mon Oct 08 2018 14:49:40 GMT+0000 (GMT) connected to mongoose success: mongodb://demo:demo@localhost:27017/demo, poolSize: 5
+Mon Oct 08 2018 14:49:40 GMT+0000 (GMT) open to mongoose mongodb://demo:demo@localhost:27017/demo.
+port： 8080
+Mon Oct 08 2018 14:50:02 GMT+0000 (GMT) connected to mongoose success: mongodb://demo:demo@localhost:27017/demo, poolSize: 5
+Mon Oct 08 2018 14:50:02 GMT+0000 (GMT) open to mongoose mongodb://demo:demo@localhost:27017/demo.
+port： 8080
+Mon Oct 08 2018 14:50:38 GMT+0000 (GMT) connected to mongoose success: mongodb://demo:demo@localhost:27017/demo, poolSize: 5
+Mon Oct 08 2018 14:50:38 GMT+0000 (GMT) open to mongoose mongodb://demo:demo@localhost:27017/demo.
+[0mGET /information [36m302 [0m14.824 ms - 56[0m
+[0mGET /login [32m200 [0m267.989 ms - 1503[0m
+[0mGET /stylesheets/bootstrap-theme.min.css [36m304 [0m1.922 ms - -[0m
+[0mGET /stylesheets/bootstrap.min.css [36m304 [0m0.888 ms - -[0m
+[0mGET /javascripts/jquery-3.1.1.min.js [36m304 [0m0.524 ms - -[0m
+[0mGET /stylesheets/basic.css [36m304 [0m0.429 ms - -[0m
+[0mGET /javascripts/bootstrap.js [36m304 [0m0.600 ms - -[0m
+[0mGET /javascripts/pagination.js [36m304 [0m0.549 ms - -[0m
+[0mGET /javascripts/common.js [36m304 [0m0.473 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m31.578 ms - 2453[0m
+port： 8080
+Mon Oct 08 2018 14:51:05 GMT+0000 (GMT) connected to mongoose success: mongodb://demo:demo@localhost:27017/demo, poolSize: 5
+Mon Oct 08 2018 14:51:05 GMT+0000 (GMT) open to mongoose mongodb://demo:demo@localhost:27017/demo.

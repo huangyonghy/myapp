@@ -48,7 +48,7 @@ p {
 #main_body {
     min-height: 30em;
     padding-top: 5em;
-    background-color: #00B7FF;
+    background-color: gray;
 }
 
 ol>li {

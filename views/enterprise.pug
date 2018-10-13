@@ -1,25 +1,27 @@
 input(type="hidden" id="showPerPage" value="0")
 input(type="hidden" id="currentPage" value="0")
 
-.article
-    table.table
-      tr
-        th 名字
-        th 联系人
-        th 联系电话
-        th 跟踪状态
-        th 备注
-        th 操作
-      each info in enterprise_info
-        tr
-          td #{info.name}
-          td #{info.contact_name}
-          td #{info.contact_telephone}
-          td #{info.follow_state}
-          td #{info.postscript}
-          td 
-            - var item1 = '#{info.name}';
-            a(href='/enterprise/delete?name='+$item1).link 删除
-            br
-            a(href='/enterprise/modify?name=#{info.name}').link 编辑
+table.table
+  tr
+    th 名字
+    th 联系人
+    th 联系电话
+    th 跟踪状态
+    th 备注
+    th 操作
+    if (user.username == "admin")
+      th 用户账号
+  each info in enterprise_info
+    tr
+      td #{info.name}
+      td #{info.contact_name}
+      td #{info.contact_telephone}
+      td #{info.follow_state}
+      td #{info.postscript}
+      td 
+        a(href='/enterprise/delete?name='+info.name).link 删除
+        br
+        a(href='/enterprise/modify?username='+info.username+'&name='+info.name).link 编辑
+      if (user.username == "admin")
+        td #{info.username}
             

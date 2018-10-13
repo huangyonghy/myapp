@@ -1,0 +1,23 @@
+extends basic
+
+block content
+    #main_body.text-center
+        h2 新增企业信息
+        form(action='/enterprise/modify' method='post')
+            input(type="text" name="username", value=enterprise_info.username, style='display: none')
+            p.text-left 名字:
+                input(type="text", name="name" value=enterprise_info.name, readonly='readonly')
+            br
+            p.text-left 联系人:
+                input(type="text", name="contact_name", value=enterprise_info.contact_name)
+            br
+            p.text-left 联系电话:
+                input(type="text", name="contact_telephone", value=enterprise_info.contact_telephone)
+            br
+            p.text-left 跟踪状态:
+                input(type="text", name="follow_state", value=enterprise_info.follow_state)
+            br
+            p.text-left 备注:
+                input(name="postscript", value=enterprise_info.postscript)
+            br
+            button(type='submit') 提交

@@ -1,20 +1,28 @@
 input(type="hidden" id="showPerPage" value="0")
 input(type="hidden" id="currentPage" value="0")
 
-.article
-    table.table
-      tr
-        th 名字
-        th 联系电话
-        th 职称
-        th 职称状态
-        th 工作状态
-        th 备注
-      each info in engineer_info
-        tr
-          td #{info.name}
-          td #{info.telephone}
-          td #{info.title_info}
-          td #{info.title_state}
-          td #{info.work_state}
-          td #{info.postscript}
+table.table
+  tr
+    th 名字
+    th 联系电话
+    th 职称
+    th 职称状态
+    th 工作状态
+    th 备注
+    th 操作
+    if (user.username == "admin")
+      th 用户账号
+  each info in engineer_info
+    tr
+      td #{info.name}
+      td #{info.telephone}
+      td #{info.title_info}
+      td #{info.title_state}
+      td #{info.work_state}
+      td #{info.postscript}
+      td                                                             
+        a(href='/engineer/delete?name='+info.name).link 删除
+        br
+        a(href='/engineer/modify?name='+info.name).link 编辑
+      if (user.username == "admin")
+        td #{info.username}

@@ -1,8 +1,32 @@
 extends basic
 
+block header
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    .navbar.navbar-fixed-top.navbar-inverse#scrollBar
+        .container
+            .navbar-header
+                button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#myNavbar'
+                    aria-expanded='false' aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                a.navbar-brand(href='/information') #{user.username}
+            .navbar-collapse.collapse#myNavbar
+                ul.nav.navbar-nav.navbar-right
+
 block content
-    #login_body.container.text-center
-        p 用户列表(用户名 ： 联系电话)
-        ol
-            each user in users
-                li.text-left #{user.username} : #{user.telephone}
+    #section1.container
+      h2.text-center 用户列表
+      table.table
+        tr
+          th 用户名
+          th 联系电话 
+          th 操作
+        each u in users
+          tr
+            td #{u.username}
+            td #{u.telephone}
+            if (user.username == u.username || user.username == "admin")
+              td
+                a(href='/users/delete?username='+u.username).link 删除
+                br
+                a(href='/users/modify?username='+u.username).link 编辑

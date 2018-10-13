@@ -24,12 +24,34 @@ router.post('/add', function(req, res, next) {
 });
 
 router.get('/delete', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
-    console.log(req.user);
-    var arg = url.parse(req.url).query;
-    var params = querystring.parse(arg);
-    console.log("param - " + params);
-    res.redirect('/information');
+    db_api.delete_enterprise(req.query, function(err) {
+        res.redirect('/information');
+    });
 });
 
+
+router.get('/modify', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
+    db_api.get_enterprise_info_by_name(req.query, function(err, enterprise_info) {
+        if (err || !enterprise_info) {
+            res.redirect('/information');
+        }
+        else {
+            res.render('enterprise_modify', {username:req.user.username, enterprise_info: enterprise_info});
+        }
+    });
+});
+
+router.post('/modify', function(req, res, next) {
+    db_api.update_enterprise(req.body, function(err) {
+       if (err) {
+           console.log(err);
+           res.send('Error:', err);
+       }
+        else {
+           res.redirect('/information');
+       }
+
+    });
+});
 
 module.exports = router;
