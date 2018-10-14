@@ -17,7 +17,7 @@ router.post('/add', function(req, res, next) {
            res.redirect('/enterprise/add');
        }
         else {
-           res.redirect('/information');
+           res.redirect('/index');
        }
 
     });
@@ -25,7 +25,7 @@ router.post('/add', function(req, res, next) {
 
 router.get('/delete', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
     db_api.delete_enterprise(req.query, function(err) {
-        res.redirect('/information');
+        res.redirect('/index');
     });
 });
 
@@ -48,7 +48,7 @@ router.post('/modify', function(req, res, next) {
            res.send('Error:', err);
        }
         else {
-           res.redirect('/information');
+           res.redirect('/index');
        }
 
     });

@@ -17,7 +17,7 @@ router.post('/add', function(req, res, next) {
            res.redirect('/engineer/add');
        }
         else {
-           res.redirect('/information');
+           res.redirect('/index/engineer');
        }
 
     });
@@ -25,14 +25,14 @@ router.post('/add', function(req, res, next) {
 
 router.get('/delete', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
     db_api.delete_engineer(req.query, function(err) {
-        res.redirect('/information');
+        res.redirect('/index/engineer');
     });
 });
 
 router.get('/modify', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
     db_api.get_engineer_info_by_name(req.query, function(err, engineer_info) {
         if (err || !engineer_info) {
-            res.redirect('/information');
+            res.redirect('/index/engineer');
         }
         else {
             res.render('engineer_modify', {username:req.user.username, engineer_info: engineer_info});
@@ -47,7 +47,7 @@ router.post('/modify', function(req, res, next) {
            res.send('Error:', err);
        }
         else {
-           res.redirect('/information');
+           res.redirect('/index/engineer');
        }
 
     });

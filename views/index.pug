@@ -11,22 +11,19 @@ block header
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href='/information') #{user.username}
+                a.navbar-brand(href='/index') #{user.username}
             .navbar-collapse.collapse#myNavbar
                 ul.nav.navbar-nav.navbar-right
-                    li.active
-                        a(href='#section1') 企业
                     li
-                        a(href='#section2') 求职者
+                        a(href='/index/enterprise') 企业
+                    li
+                        a(href='/index/engineer') 求职者
 
 block content
-    #section1.container
-        .page-header
-            h2.text-center 企业
-                a(href='/enterprise/add').link --新增
-        include enterprise
-    #section2.container
-        .page-header
-            h2.text-center 求职者
-                a(href='/engineer/add').link --新增
-        include engineer
+    #section.container
+        if enterprise_info
+            include enterprise
+        else if engineer_info
+            include engineer
+        else
+            404 page not fpund

@@ -1,6 +1,17 @@
 input(type="hidden" id="showPerPage" value="0")
 input(type="hidden" id="currentPage" value="0")
 
+h3.text-center 求职者
+    a(href='/engineer/add').link [新增]
+
+form(action='/index/engineer' method='get')
+    .row
+        div(class="col-md-3 col-md-offset-6 text-right") 关键字:
+        div(class="col-md-2 text-left")
+            input(type="text" name="keyword")
+        div(class="col-md-1")
+            button(type="submit") 搜索
+
 table.table
   tr
     th 名字
@@ -9,6 +20,7 @@ table.table
     th 职称状态
     th 工作状态
     th 备注
+    th 更新时间
     th 操作
     if (user.username == "admin")
       th 用户账号
@@ -20,6 +32,7 @@ table.table
       td #{info.title_state}
       td #{info.work_state}
       td #{info.postscript}
+      td #{info.update_time_str}
       td                                                             
         a(href='/engineer/delete?name='+info.name).link 删除
         br

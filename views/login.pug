@@ -1,7 +1,7 @@
 extends basic
 
 block content
-  #main_body.text-center
+  #section.container.text-center
       form(action=action method='post')
           .row
               div(class="col-md-4 col-md-offset-2 text-right") 用户名:
@@ -14,5 +14,5 @@ block content
                   input(type="password" name="password")
           <br>
           .row
-              div(class="col-md-12 btn-block")
+              div(class="col-md-12  btn-block")
                   button(type="submit") 登录

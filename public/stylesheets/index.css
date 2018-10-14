@@ -4,36 +4,18 @@ body {
     background-color: white;
 }
 
-#section1 {
-    background-color: #AAAABB;
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-
-#section2 {
-    background-color: #AAFFAA;
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-
-#section3 {
+#section {
     background-color: white;
     padding-bottom: 2em;
     padding-top: 2em;
 }
 
-#section1 .link {
+#section .link {
     font-style: italic;
     font-size: smaller;
-    color: #a94442;
+    color: blue;
 }
 
-#section2 .link {
-    font-style: italic;
-    font-size: smaller;
-    color: #a94442;
-}
-/* article */
 .table {
     text-align: center;
     border: solid 0.2em black;
@@ -49,5 +31,5 @@ body {
 }
 
 .table td a{
-    color: #a6e1ec;
+    color: blue;
 }

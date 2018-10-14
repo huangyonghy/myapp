@@ -1,14 +1,14 @@
 body {
     position: relative;
-    background-color: #ddd;
+    background-color: white;
     min-height: 30em;
 }
 
 a {
-    color: #00B7FF;
+    color: green;
 }
 
-h1 {
+h3 {
     color: orange;
     text-align: center;
 }
@@ -28,7 +28,6 @@ p {
 
 .bottom {
     height: 80px;
-    background: #00CCFF;
 }
 
 .bottom footer
@@ -44,13 +43,6 @@ p {
 /*background-color: #00AA88;*/
 /*}*/
 
-
-#main_body {
-    min-height: 30em;
-    padding-top: 5em;
-    background-color: gray;
-}
-
 ol>li {
     color: green;
     padding: 1em 0 0 0;
@@ -58,8 +50,3 @@ ol>li {
     font-size: 1.5em;
 }
 
-.diary_content {
-    min-height: 30em;
-    padding-top: 5em;
-    background-color: #00B7FF;
-}

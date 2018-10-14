@@ -1,13 +1,26 @@
 input(type="hidden" id="showPerPage" value="0")
 input(type="hidden" id="currentPage" value="0")
 
+h3.text-center 企业
+    a(href='/enterprise/add').link [新增]
+
+form(action='/index/enterprise' method='get') 
+    .row
+        div(class="col-md-3 col-md-offset-6 text-right") 关键字:
+        div(class="col-md-2 text-left")
+            input(type="text" name="keyword")
+        div(class="col-md-1" text-right)
+            button(type="submit") 搜索
+
 table.table
   tr
     th 名字
     th 联系人
+    th 联系人职称
     th 联系电话
     th 跟踪状态
     th 备注
+    th 更新时间
     th 操作
     if (user.username == "admin")
       th 用户账号
@@ -15,13 +28,14 @@ table.table
     tr
       td #{info.name}
       td #{info.contact_name}
+      td #{info.contact_title}
       td #{info.contact_telephone}
       td #{info.follow_state}
       td #{info.postscript}
+      td #{info.update_time_str}
       td 
         a(href='/enterprise/delete?name='+info.name).link 删除
         br
         a(href='/enterprise/modify?username='+info.username+'&name='+info.name).link 编辑
       if (user.username == "admin")
         td #{info.username}
-            
